@@ -1,4 +1,5 @@
 require 'eventmachine'
+require 'servbot/const'
 
 module Servbot
   class Bot
