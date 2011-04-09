@@ -3,8 +3,8 @@ require 'eventmachine'
 module Servbot
   class Bot
     def initialize
-      if file.exists?(Servbot::Constants::CONFIG_FILE)
-        Servbot::Config.from_file(Servbot::Constants::CONFIG_FILE)
+      if file.exists?(Servbot::Const::CONFIG_FILE)
+        Servbot::Config.from_file(Servbot::Const::CONFIG_FILE)
       end
     end
 

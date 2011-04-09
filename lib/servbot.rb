@@ -7,7 +7,8 @@ module Servbot
   end
 end
 
-require 'rockbot/config'
-require 'rockbot/channel'
-require 'rockbot/bot'
+require 'servbot/const'
+require 'servbot/config'
+require 'servbot/channel'
+require 'servbot/bot'
 

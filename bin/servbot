@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-
 require 'servbot'
 require 'optparse'
 
@@ -15,8 +13,8 @@ optparse = OptionParser.new do |opts|
     options[:verbose] = true
   end
 
-  options[:configfile] = Servbot::Constants::CONFIG_FILE
-  opts.on ( '-c', '--config', 'Specify a configuration file' ) do |file|
+  options[:configfile] = Servbot::Const::CONFIG_FILE
+  opts.on( '-c', '--config', 'Specify a configuration file' ) do |file|
     options[:configfile] = file
   end
 

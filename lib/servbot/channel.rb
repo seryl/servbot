@@ -7,4 +7,5 @@ module Servbot
       @name = name
       @users = Array.new
     end
+  end
 end
