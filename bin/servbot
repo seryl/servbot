@@ -13,9 +13,9 @@ optparse = OptionParser.new do |opts|
     options[:verbose] = true
   end
 
-  options[:configfile] = Servbot::Const::CONFIG_FILE
+  options[:config] = Servbot::Const::CONFIG_FILE
   opts.on( '-c', '--config', 'Specify a configuration file' ) do |file|
-    options[:configfile] = file
+    options[:config] = file
   end
 
   opts.on( '-h', '--help', 'Display this screen' ) do
@@ -23,6 +23,8 @@ optparse = OptionParser.new do |opts|
     exit
   end  
 end
+
+optparse.parse!
 
 puts "Verbose Mode" if options[:verbose]
 servbot = Servbot::Bot.new

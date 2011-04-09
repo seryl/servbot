@@ -4,7 +4,7 @@ require 'servbot/const'
 module Servbot
   class Bot
     def initialize
-      if file.exists?(Servbot::Const::CONFIG_FILE)
+      if File.exists?(Servbot::Const::CONFIG_FILE)
         Servbot::Config.from_file(Servbot::Const::CONFIG_FILE)
       end
     end
