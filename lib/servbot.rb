@@ -11,4 +11,5 @@ require 'servbot/const'
 require 'servbot/config'
 require 'servbot/channel'
 require 'servbot/bot'
+require 'servbot/irc'
 

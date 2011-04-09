@@ -12,6 +12,20 @@ module Servbot
                                self, options)
     end
 
+    def command(*cmd)
+      send_data "#{ cmd.flatten.join(' ') }\r\n"
+    end
+
+    def post_init
+      command "USER", [Servbot::Config.username]*4
+      command "NICK", Servbot::Config.nickname
+      command("NickServ IDENTIFY", Servbot::Config.username,
+              Servbot::Config.password) if Servbot::Config.password
+
+      Servbot::Config.channels.each { |channel|
+        command("JOIN", "##{channel}") } if Servbot::Config.channels
+    end
+
     def receive_line(line)
       puts line
     end

@@ -5,7 +5,8 @@ module Servbot
     extend(Mixlib::Config)
 
     server 'localhost'
-    channel 'servbot'
+    port '6667'
+    channels ['servbot']
 
     username 'servbot'
     password nil
