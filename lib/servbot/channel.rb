@@ -1,5 +1,4 @@
-module Servbot
-  class Channel
+module Servbot::Channel
     attr_reader :name
     attr_accessor :users
 
@@ -7,5 +6,4 @@ module Servbot
       @name = name
       @users = Array.new
     end
-  end
 end
