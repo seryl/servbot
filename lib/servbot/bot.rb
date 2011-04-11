@@ -1,7 +1,7 @@
 module Servbot
   class Bot
-    attr_accessor :commands, :connected
-    @commands = {}
+    attr_accessor :cmd_list, :connected
+    @cmd_list = {}
 
     def initialize
       if File.exists?(Servbot::Const::CONFIG_FILE)

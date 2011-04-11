@@ -23,16 +23,20 @@ module Servbot
 
     def queue(sender, receiver, msg)
       username = sender.split("!").first
-      @queue << [username, msg]
+      # @queue << [username, msg]
+      command, *args = msg.split
+      Servbot::Bot.run(command, args)
     end
 
+=begin
     def dequeue
       while job = @queue.pop
         sender, cmd = job
-        command, *args = cmd
+        command, *args = cmd.split
         Servbot::Bot.run(command, args)
       end
     end
+=end
 
     def post_init
       EM.add_timer(1) do
