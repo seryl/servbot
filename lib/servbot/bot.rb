@@ -1,8 +1,6 @@
 class Servbot::Bot
   attr_accessor :connected, :commands
 
-  include Servbot::Plugins
-
   def initialize
     @commands = {}
     if File.exists?(Servbot::Const::CONFIG_FILE)
@@ -25,12 +23,25 @@ class Servbot::Bot
     proc ? proc.call(args) : (puts "command #{ command } not found. ")
   end
   
-  def self.clear_commands
+  def clear_commands
     @commands = {}
   end
   
-  def self.add_command(command, proc)
+  def add_command(command, proc)
     @commands[command] = proc
+  end
+
+  def load_plugins
+    clear_commands
+
+    plugin_dir = [Servbot::Config.config.split[0], 'plugins'].join('/')
+    if Dir.exists?(plugin_dir)
+      Dir.glob("#{plugin_dir}/*.rb").each do |file|
+        puts file
+      end
+    else
+      puts "WARN: Plugin directory doesn't exist."
+    end
   end
   
 end
