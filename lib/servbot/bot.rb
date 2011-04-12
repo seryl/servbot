@@ -1,6 +1,8 @@
 class Servbot::Bot
   attr_accessor :connected, :commands
 
+  include Servbot::Plugins
+
   def initialize
     @commands = {}
     if File.exists?(Servbot::Const::CONFIG_FILE)
@@ -12,6 +14,7 @@ class Servbot::Bot
     
     EM.run do
       load_plugins
+      self.commands["echo"] = lambda { |*args puts args.join(" ") }
       Servbot::IRC.connect(nil)
     end
   end
@@ -29,19 +32,6 @@ class Servbot::Bot
   
   def add_command(command, proc)
     @commands[command] = proc
-  end
-
-  def load_plugins
-    clear_commands
-
-    plugin_dir = [Servbot::Config.config.split[0], 'plugins'].join('/')
-    if Dir.exists?(plugin_dir)
-      Dir.glob("#{plugin_dir}/*.rb").each do |file|
-        puts file
-      end
-    else
-      puts "WARN: Plugin directory doesn't exist."
-    end
   end
   
 end

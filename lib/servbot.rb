@@ -10,6 +10,6 @@ require 'servbot/const'
 require 'servbot/config'
 require 'servbot/channel'
 require 'servbot/irc'
-require 'servbot/plugin'
+require 'servbot/plugins'
 require 'servbot/bot'
 

@@ -23,7 +23,6 @@ module Servbot
 
     def queue(sender, receiver, msg)
       username = sender.split("!").first
-      # @queue << [username, msg]
       command, *args = msg.split
       Servbot::Bot.run(command, args)
     end
