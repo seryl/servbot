@@ -7,11 +7,17 @@ module Servbot::Plugins
   #
   # Ex: awesome.rb would load Servbot::Plugin::Awesome
   def load_plugins
+    @plugins = []
     clear_commands
+
     # Base Plugins
     load_directory "#{File.dirname(__FILE__)}/plugins"
     # External plugins
     load_directory "#{File.dirname(Servbot::Config.config)}/plugins"
+
+    @plugins.each do |plugin|
+      # TODO: Initialize Plugin
+    end
   end
 
   def load_directory(directory)
@@ -25,7 +31,7 @@ module Servbot::Plugins
 
   def add_plugin(file)
     plugin = File.basename(file, ".rb").capitalize
-    @plugins = Object.const_get(:Servbot).const_get(:Plugins)\
+    @plugins << Object.const_get(:Servbot).const_get(:Plugins)\
       .const_get(plugin).new
   end
 end

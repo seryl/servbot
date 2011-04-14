@@ -33,5 +33,4 @@ end
 
 optparse.parse!
 
-puts "Verbose Mode" if options[:verbose]
-servbot = Servbot::Bot.new
+servbot = Servbot::Bot.new(options)

@@ -1,9 +1,7 @@
 class Servbot::Plugins::Base
 
   def initialize
-  end
-
-  def plugin_commands
+    #add_command "hello", lambda { |*args| puts args.join(" ") }
   end
 
 end
