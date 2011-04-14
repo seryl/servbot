@@ -8,8 +8,6 @@ end
 module Servbot::Config
   extend(Mixlib::Config)
   
-  config Servbot::Const::CONFIG_FILE
-  
   server 'localhost'
   port '6667'
   channels ['servbot']
