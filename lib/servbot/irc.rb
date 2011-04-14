@@ -1,4 +1,9 @@
-require 'eventmachine'
+begin
+  require 'eventmachine'
+rescue LoadError
+  require 'rubygems'
+  require 'eventmachine'
+end
 
 module Servbot
   class IRC < EventMachine::Connection
@@ -27,16 +32,6 @@ module Servbot
       Servbot::Bot.run(command, args)
     end
 
-=begin
-    def dequeue
-      while job = @queue.pop
-        sender, cmd = job
-        command, *args = cmd.split
-        Servbot::Bot.run(command, args)
-      end
-    end
-=end
-
     def post_init
       EM.add_timer(1) do
         command "USER", [Servbot::Config.username]*4
@@ -52,7 +47,7 @@ module Servbot
     def receive_line(line)
       case line
       when /^PING (.*)/ then command('PONG', $1)
-      when /^:(\S+) PRIVMSG (.*) :\!#{ Servbot::Config.nickname } (.*)$/ then queue($1, $2, $3)
+      when /^:(\S+) PRIVMSG (.*) :\!#{Servbot::Config.nickname} (.*)$/ then queue($1, $2, $3)
       else puts line; end
     end
 

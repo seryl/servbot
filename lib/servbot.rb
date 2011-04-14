@@ -1,5 +1,3 @@
-require 'rubygems'
-
 module Servbot
   def self.run
     bot = Servbot::Bot
@@ -12,4 +10,3 @@ require 'servbot/channel'
 require 'servbot/irc'
 require 'servbot/plugins'
 require 'servbot/bot'
-

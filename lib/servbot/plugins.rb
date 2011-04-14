@@ -11,7 +11,7 @@ module Servbot::Plugins
     # Base Plugins
     load_directory "#{File.dirname(__FILE__)}/plugins"
     # External plugins
-    load_directory "#{ File.dirname(Servbot::Config.config) }/plugins"
+    load_directory "#{File.dirname(Servbot::Config.config)}/plugins"
   end
 
   def load_directory(directory)

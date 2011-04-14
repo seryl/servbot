@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 
-require 'servbot'
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+
 require 'optparse'
+begin
+  require 'servbot'
+rescue LoadError
+  require 'rubygems'
+  require 'servbot'
+end
 
 options = {}
 

@@ -1,0 +1,31 @@
+servbot(1) -- Servbot irc daemon
+================================
+
+## SYNOPSIS
+
+`servbot` [options...]<br />
+`servbot` `-c|--config` file...<br />
+`servbot` `-v|--verbose`
+
+
+## DESCRIPTION
+
+Servbot is a fully extendable Eventmachine based IRC bot.
+
+The `servbot` command will start the bot reading the configuration
+from the default location; and uses defaults if it doesn't exist.
+
+     # Default Configuration
+     /etc/servbot/servbot.rb
+
+     # Default Plugins
+     /etc/servbot/plugins/*.rb
+
+## COPYRIGHT
+
+Servbot is Copyright (C) 2011 Josh Toft <http://joshtoft.com>
+
+## SEE ALSO
+
+servbot(5), 
+<http://joshtoft.com/about>

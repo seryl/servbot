@@ -1,4 +1,9 @@
-require 'mixlib/config'
+begin
+  require 'mixlib/config'
+rescue LoadError
+  require 'rubygems'
+  require 'mixlib/config'
+end
 
 module Servbot::Config
   extend(Mixlib::Config)

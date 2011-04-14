@@ -1,0 +1,42 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "SERVBOT" "1" "April 2011" "SERYL" ""
+.
+.SH "NAME"
+\fBservbot\fR \- Servbot irc daemon
+.
+.SH "SYNOPSIS"
+\fBservbot\fR [options\.\.\.]
+.
+.br
+\fBservbot\fR \fB\-c|\-\-config\fR file\.\.\.
+.
+.br
+\fBservbot\fR \fB\-v|\-\-verbose\fR
+.
+.SH "DESCRIPTION"
+Servbot is a fully extendable Eventmachine based IRC bot\.
+.
+.P
+The \fBservbot\fR command will start the bot reading the configuration from the default location; and uses defaults if it doesn\'t exist\.
+.
+.IP "" 4
+.
+.nf
+
+ # Default Configuration
+ /etc/servbot/servbot\.rb
+
+ # Default Plugins
+ /etc/servbot/plugins/*\.rb
+.
+.fi
+.
+.IP "" 0
+.
+.SH "COPYRIGHT"
+Servbot is Copyright (C) 2011 Josh Toft \fIhttp://joshtoft\.com\fR
+.
+.SH "SEE ALSO"
+servbot(5), \fIhttp://joshtoft\.com/about\fR
