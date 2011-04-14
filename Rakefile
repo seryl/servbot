@@ -50,6 +50,11 @@ end
 
 task :default => :spec
 
+desc 'Build the manual'
+task :man do
+  sh "ronn -w -s toc -br5 --organization=SERYL man/*.ron"
+end
+
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
