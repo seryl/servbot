@@ -52,7 +52,7 @@ task :default => :spec
 
 desc 'Build the manual'
 task :man do
-  sh "ronn -w -s toc -br5 --organization=SERYL man/*.ron"
+  sh "ronn -w -s toc -br5 --organization=SERYL man/*.ronn"
 end
 
 require 'rake/rdoctask'
