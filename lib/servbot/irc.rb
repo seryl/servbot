@@ -1,3 +1,4 @@
+require 'observer'
 begin
   require 'eventmachine'
 rescue LoadError
@@ -7,14 +8,10 @@ end
 
 module Servbot
   class IRC < EventMachine::Connection
+    include Observable
     include EventMachine::Protocols::LineText2
 
     attr_accessor :connection
-    @@connected = false
-
-    def initialize(options)
-      @queue = []
-    end
 
     def self.connect(options)
       @connection = EM.connect(Servbot::Config.server,
@@ -29,7 +26,8 @@ module Servbot
     def queue(sender, receiver, msg)
       username = sender.split("!").first
       command, *args = msg.split
-      Servbot::Bot.run(command, args)
+      changed             # notifiy observers
+      notify_observers(Time.now, username, command, args)
     end
 
     def post_init

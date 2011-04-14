@@ -1,8 +1,4 @@
-module Servbot
-  def self.run
-    bot = Servbot::Bot
-  end
-end
+module Servbot; end
 
 require 'servbot/const'
 require 'servbot/config'

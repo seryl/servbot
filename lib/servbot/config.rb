@@ -17,4 +17,10 @@ module Servbot::Config
   username 'servbot'
   password nil
   nickname 'servbot'
+
+  def self.load_config
+    if File.exists?(Servbot::Const::CONFIG_FILE)
+      Servbot::Config.from_file(Servbot::Const::CONFIG_FILE)
+    end
+  end
 end
