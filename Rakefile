@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "servbot"
   gem.homepage = "http://github.com/seryl/servbot"
   gem.license = "GPL"
-  gem.summary = %Q{Ruby IRC bot based on Eventmachine}
-  gem.description = %Q{Ruby IRC bot based on Eventmachine}
+  gem.summary = %Q{Servbot is a fully extensible Eventmachine based IRC bot.}
+  gem.description = %Q{Servbot is a fully extensible Eventmachine based IRC bot.}
   gem.email = "joshtoft@gmail.com"
   gem.authors = ["Josh Toft"]
   gem.add_runtime_dependency 'eventmachine', '>= 0.12.10'

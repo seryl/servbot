@@ -1,7 +1,7 @@
 Servbot
 =======
 
-An eventmachine-based irc bot.
+Servbot is a fully extensible Eventmachine based IRC bot.
 
 Contributing to servbot
 -----------------------

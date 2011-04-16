@@ -10,7 +10,7 @@ servbot(1) -- Servbot irc daemon
 
 ## DESCRIPTION
 
-Servbot is a fully extendable Eventmachine based IRC bot.
+Servbot is a fully extensible Eventmachine based IRC bot.
 
 The `servbot` command will start the bot reading the configuration
 from the default location; and uses defaults if it doesn't exist.
@@ -20,6 +20,8 @@ from the default location; and uses defaults if it doesn't exist.
 
      # Default Plugins
      /etc/servbot/plugins/*.rb
+     
+![Servbot](http://joshtoft.com/images/servbot.png)
 
 ## COPYRIGHT
 
