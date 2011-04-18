@@ -1,5 +1,4 @@
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'servbot/utils'
 
 module Servbot::Plugins
   include Servbot::Events

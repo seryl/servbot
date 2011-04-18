@@ -1,5 +1,4 @@
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'servbot/utils'
 
 Dir.glob("#{File.dirname(__FILE__)}/events/*.rb").sort.each { |file| require file }
 

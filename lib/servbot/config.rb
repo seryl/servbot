@@ -6,7 +6,7 @@ rescue LoadError
 end
 
 module Servbot::Config
-  extend(Mixlib::Config)
+  extend Mixlib::Config
 
   config Servbot::Const::CONFIG_FILE
   
